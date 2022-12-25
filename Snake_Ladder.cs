@@ -11,13 +11,16 @@ namespace Snake_and_Ladder_Problem
         public static void Snake_and_Ladder()
         {
             int start = 0;
+
             //UC1
             Console.WriteLine("WELCOME TO SNAKE AND LADDER.");
             Console.WriteLine("Enter Player 1 Name: ");
             String player1 = Console.ReadLine();
             Console.WriteLine("Hello " + player1 + " Welcome to Snake and Ladder.");
             Console.WriteLine("Player 1 on: " + start + " Position.");
-
+            Random random = new Random();
+            int die = random.Next(6);
+            Console.WriteLine(die);
         }
     }
 }
