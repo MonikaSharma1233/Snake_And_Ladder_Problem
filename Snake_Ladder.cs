@@ -9,11 +9,12 @@ namespace Snake_and_Ladder_Problem
     public class Snake_Ladder
     {
 
-        public static void Snake_and_Ladder()
+        public void Snake_and_Ladder()
         {
             int start = 0;
             int position = 0;
             int end = 100;
+            int die_counter = 0;
             //UC1
             Console.WriteLine("WELCOME TO SNAKE AND LADDER.");
             Console.WriteLine("Enter Player 1 Name: ");
@@ -28,7 +29,6 @@ namespace Snake_and_Ladder_Problem
 
                 if (position >= 100)
                 {
-                    Console.WriteLine("Congratulation Game Win.");
                     break;
                 }
                 else
@@ -36,13 +36,11 @@ namespace Snake_and_Ladder_Problem
                     Random random = new Random();
                     int die = random.Next(1, 6);
                     Console.WriteLine("Die generated: " + die);
-
+                    die_counter++;
                     Random random1 = new Random();
                     int check_option = random1.Next(3);
-                    Console.WriteLine("Player choose the option: " + check_option);
                     if (check_option == 0)
                     {
-
                         Console.WriteLine("PLAYER GOT LADDER.");
                         position = position + die;
                         Console.WriteLine(position);
@@ -51,23 +49,24 @@ namespace Snake_and_Ladder_Problem
                     {
                         Console.WriteLine("PLAYER GOT SNAKE");
                         position = position - die;
-
                         if (position <= 0)
                         {
                             position = 0;
-
                             Console.WriteLine("Game start from 0.");
-
                         }
                         Console.WriteLine(position);
                     }
                     else
                     {
                         position = position + 0;
+                        Console.WriteLine("NO Play Stay in same position.");
                     }
                     i++;
                 }
             }
+            Console.WriteLine(player1 + " Congratulation you win the Game.");
+            Console.WriteLine("You reach at 100.");
+            Console.WriteLine("Number of dice counts are: " + die_counter);
         }
     }
 }
